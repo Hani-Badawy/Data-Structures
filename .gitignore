@@ -1,1 +1,2 @@
-Array/build/
+*.class
+Array/build
