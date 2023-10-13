@@ -1,5 +1,8 @@
 package arry;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -14,8 +17,26 @@ public class AppDriver {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        Integer[] nums = {1, 2, 3, 4, 5};
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        
+        System.out.println("Welcome to the array program.");
+        //System.out.println("You entered the number "+ args[1]);
+        String type = args[0]; // can be student/ employee
+        // a class names "Class"
+        Class myClass = Class.forName(type);
+        
+        Object o  = myClass.getConstructor(null).newInstance();
+        Class[] param = {Class.forName("java.lang.String")};
+        Method m = myClass.getMethod("printName", param );
+        m.invoke(o, "Hani");
+        
+        Integer a1= Integer.parseInt(args[1]);
+        Integer a2= Integer.parseInt(args[2]);
+        Integer a3= Integer.parseInt(args[3]);
+        Integer a4= Integer.parseInt(args[4]);
+        Integer a5= Integer.parseInt(args[5]);
+        
+        Integer[] nums = {a1, a2, a3, a4, a5};
         
         Arry<Integer> myArry = new Arry(nums);// generics works only with Object types
         Arry myArry2 = new Arry();
