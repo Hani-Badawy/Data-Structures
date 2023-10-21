@@ -9,7 +9,7 @@ package algorithm;
  * @author hmohamme
  * @param <T>
  */
-public class Sorter<T>{
+public class Sorter<T extends Comparable>{
     
     
    /* public  void selectionSort(T[] data) // pass by reference..
@@ -34,13 +34,13 @@ public class Sorter<T>{
         System.arraycopy(sorted, 0, data, 0, data.length);
     }
 */
-    public static void insertionSort(int[] data) // pass by reference..
+    public  void insertionSort(T[] data) // pass by reference..
     {
-        int[] sorted = new int[data.length];
+        T[] sorted = (T[])new Object[data.length];
 
         for (int i = 0; i < data.length; i++) {
             for (int j = 1; j < data.length; j++) {
-               if (data[i]> data[j])
+               if (data[i].compareTo(data[j]) > 0)
                    swap(data, j+1, (j+1));
                 
             }
@@ -49,9 +49,9 @@ public class Sorter<T>{
         System.arraycopy(sorted, 0, data, 0, data.length);
     }
     
-    public static void swap(int[] data, int i,int j)
+    public  void swap(T[] data, int i,int j)
     {
-       int  temp = data[i];
+       T  temp = data[i];
        data[i] = data[j];
        data[j] = temp;
     }

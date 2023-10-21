@@ -19,6 +19,7 @@ public class AppDriver {
      */
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         
+        // -th 
        /* System.out.println("Welcome to the array program.");
         //System.out.println("You entered the number "+ args[1]);
         String type = args[0]; // can be student/ employee
@@ -121,7 +122,7 @@ public class AppDriver {
         System.out.print( "\n Testing sort\n");
         /********* Test sorting *******/
         int[] randomData = {1, 5, 6, 8, 0};
-        Sorter.selectionSort(randomData);
+        //Sorter.selectionSort(randomData);
         
         for (var i: randomData)
             System.out.print(i +" \t");

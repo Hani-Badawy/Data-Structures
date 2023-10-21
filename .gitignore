@@ -1,3 +1,6 @@
 *.class
 Array/build
 /Array/dist/
+/Adt/nbproject/private/
+/Adt/build/
+/Adt/dist/
