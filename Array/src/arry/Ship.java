@@ -8,7 +8,7 @@ package arry;
  *
  * @author hmohamme
  */
-public class Ship {
+public class Ship extends Vehicle{
     int speed; 
     int capacity;
     String colour;

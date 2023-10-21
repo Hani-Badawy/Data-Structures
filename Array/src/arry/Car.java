@@ -4,7 +4,7 @@ package arry;
  *
  * @author Hani Mohammed
  */
-public class Car implements Comparable <Car>{
+public class Car extends  Vehicle{
     private int modelyear;
     private String color;
     private int horsePower;
@@ -39,7 +39,6 @@ public class Car implements Comparable <Car>{
         this.color = color;
     }
 
-    @Override
     public int compareTo(Car otherCar) {
         return this.horsePower - otherCar.horsePower; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }

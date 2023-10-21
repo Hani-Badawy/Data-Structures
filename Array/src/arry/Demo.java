@@ -23,10 +23,7 @@ public class Demo {
     {
         if(args.length < 3 )
             System.out.println("Invalid number of Arguments");
-        
-        String a1 = args[0];
-        String a2 = args[1];
-        String a3 = args[2];
+        Vehicle[] vs = new Vehicle[5];
         String fileName="";
         String type="";
         String sortMethod="";
@@ -66,6 +63,7 @@ public class Demo {
                 String color = myReader.next();
                 int hp = myReader.nextInt();
                 Car c = new Car(year, color, hp);
+                vs[i] =c;
                 System.out.println(c);
             }
             if(ObjectType.equalsIgnoreCase("Ship"))

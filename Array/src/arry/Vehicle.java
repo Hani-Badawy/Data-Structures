@@ -8,6 +8,11 @@ package arry;
  *
  * @author hmohamme
  */
-public class Vehicle {
+public abstract  class Vehicle implements Comparable<Vehicle>{
+
+    @Override
+    public int compareTo(Vehicle o) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
