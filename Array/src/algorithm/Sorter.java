@@ -4,6 +4,8 @@
  */
 package algorithm;
 
+import arry.CompareByAge;
+
 /**
  *
  * @author hmohamme
@@ -36,11 +38,13 @@ public class Sorter<T extends Comparable>{
 */
     public  void insertionSort(T[] data) // pass by reference..
     {
+        CompareByAge cba = new CompareByAge();
+        
         T[] sorted = (T[])new Object[data.length];
 
         for (int i = 0; i < data.length; i++) {
             for (int j = 1; j < data.length; j++) {
-               if (data[i].compareTo(data[j]) > 0)
+               if (cba.compare(data[j], data[j+1]) > 0)
                    swap(data, j+1, (j+1));
                 
             }

@@ -8,7 +8,7 @@ package src;
  *
  * @author hmohamme
  */
-public class Car implements Vehicle {
+public class Car implements Vehicle, Comparable<Object> {
 
     int x;
     int y;

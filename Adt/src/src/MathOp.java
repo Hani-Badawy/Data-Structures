@@ -12,8 +12,7 @@ public class MathOp implements Algebra {
 
     @Override
     public int add(int a, int b) {
-        int c = a+b;
-        return c;
+        return -1;
     }
 
     @Override
