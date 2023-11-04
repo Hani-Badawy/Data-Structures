@@ -4,34 +4,36 @@
  */
 package datastructures;
 
+import java.util.Iterator;
+
 /**
  *
  * @author hmohamme
  */
-public class Node {
-    private int val; 
+public class Node<T>{
+    private T val; 
     private Node next;
     
-    public Node(int val, Node next) {
+    public Node(T val, Node next) {
         this.val = val;
         this.next = next;
     }
 
-    public Node(int val) {
+    public Node(T val) {
         this.val = val;
         this.next = null;
     }
 
     public Node() {
-        this.val = -1;
+        this.val = null;
         this.next = null;
     }
 
-    public int getVal() {
+    public T getVal() {
         return val;
     }
 
-    public void setVal(int val) {
+    public void setVal(T val) {
         this.val = val;
     }
 
@@ -46,6 +48,11 @@ public class Node {
     @Override
     public String toString() {
         return "Node{" + "val=" + val + '}';
+    }
+
+    public boolean hasNext()
+    {
+        return next != null;
     }
     
     

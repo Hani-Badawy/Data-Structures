@@ -4,13 +4,15 @@
  */
 package datastructures;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Hani Mohammed
  */
-public class LinkedList {
-    private Node head;
-    private Node tail;
+public class LinkedList<T> implements Iterable{
+    private Node<T> head;
+    private Node<T> tail;
     private int size;
     
     public LinkedList() {
@@ -19,23 +21,23 @@ public class LinkedList {
         size = 0;
     }
     
-    public Node getHead() {
+    public Node<T> getHead() {
         return head;
     }
 
-    public void setHead(Node head) {
+    public void setHead(Node<T> head) {
         this.head = head;
     }
     
-    public Node getTail() {
+    public Node<T> getTail() {
         return tail;
     }
 
-    public void setTail(Node tail) {
+    public void setTail(Node<T> tail) {
         this.tail = tail;
     }
     
-    public void add(Node node)
+    public void add(Node<T> node)
     {
         if(isEmpty())
         {
@@ -49,13 +51,13 @@ public class LinkedList {
         size++;
     }
     
-    public void insert(int location, Node node)
+    public void insert(int location, Node<T> node)
     {
-        Node current = head;
+        Node<T> current = head;
         for(int i = 1; i<location; i++)
             current = current.getNext();
         
-        Node temp = current.getNext();
+        Node<T> temp = current.getNext();
         current.setNext(node);
         node.setNext(temp);
         size++;
@@ -64,7 +66,7 @@ public class LinkedList {
     /**  removing from the end (tail)*/
     public void remove()
     {
-        Node current = head;
+        Node<T> current = head;
        for (int i = 0; i<size - 1; i++)
            current = current.getNext();
        
@@ -76,8 +78,15 @@ public class LinkedList {
     
     public void remove(int location)
     {
-        
+       Node<T> current = head; 
+       for(int i = 0; i< location - 1; i++)
+           current = current.getNext();
+       
+       var temp = current.getNext().getNext();
+       current.setNext(temp);
+       size--;
     }
+    
     public boolean isEmpty()
     {
         return head==null;
@@ -90,7 +99,7 @@ public class LinkedList {
     @Override
     public String toString() {
         String list="";
-        Node node = head;
+        Node<T> node = head;
         for(int i=0; i<size; i++)
         {
             list += node;
@@ -98,6 +107,12 @@ public class LinkedList {
             node = node.getNext();
         }
         return list;
+    }
+
+    @Override
+    public LinkedListIterator<T> iterator() {
+        LinkedListIterator<T> iterator =  new LinkedListIterator<>(this);
+        return iterator;
     }
     
     
