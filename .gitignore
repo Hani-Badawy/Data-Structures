@@ -1,2 +1,10 @@
 *.class
 Array/build
+/Array/dist/
+/Adt/nbproject/private/
+/Adt/build/
+/Adt/dist/
+/JavaApplication19/nbproject/private/
+/JavaApplication19/build/
+/LinkedList/nbproject/private/
+/LinkedList/build/

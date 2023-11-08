@@ -4,7 +4,7 @@ package arry;
  *
  * @author Hani Mohammed
  */
-public class Arry<T>{
+public class Arry<T> implements ArryInterface{
     private T[] data;
     private int size;
 
@@ -39,6 +39,7 @@ public class Arry<T>{
         return result;
     }
     
+    @Override
     public void remove(int index)
     {
         // old [0 1 2 3 4 5 6] ---> remove at 3
@@ -54,6 +55,7 @@ public class Arry<T>{
         size--;
     }
     
+    @Override
     public void insert(int index, int val){
         // old [0 1 2 3 4 5 6] ---> insert at index(3) the value 17
         // new [0 1 2 17 3 4 5 6]
@@ -73,6 +75,7 @@ public class Arry<T>{
         size++;
     }
 
+    @Override
     public void insertRange(int start, int[] vals)
     {
         //{1, 2,(32, 43, 233, 44), 3, 4, 5} insert at 2
