@@ -10,7 +10,7 @@ import java.util.Iterator;
  *
  * @author hmohamme
  */
-public class LinkedListIterator<T> implements Iterator<T>{
+public class LinkedListIterator<T> implements Iterator<Node<T>>{
 
     LinkedList<T> list;
     Node<T> current;
@@ -29,9 +29,9 @@ public class LinkedListIterator<T> implements Iterator<T>{
      * @return
      */
     @Override
-    public T next() {
+    public Node<T> next() {
         current = current.getNext();
-        return current.getVal();
+        return current;
     }
     
 }

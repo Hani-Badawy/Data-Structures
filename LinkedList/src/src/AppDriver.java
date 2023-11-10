@@ -10,7 +10,10 @@ import datastructures.DNode;
 import datastructures.LinkedList;
 import datastructures.LinkedListIterator;
 import datastructures.Node;
+import datastructures.Queue;
+import datastructures.Stack;
 import java.util.ArrayList;
+import javax.management.Query;
 
 /**
  *
@@ -66,7 +69,49 @@ public class AppDriver {
         var iter = new LinkedListIterator<Integer>(list);
         
         while(iter.hasNext())
-            System.out.println(iter.next());
+            System.out.println(iter.next().getVal());
+        
+        for (var i: list)
+            System.out.println(i);
+        
+        /*****  Testing Stack ******/
+        System.out.println("*************** Stack testing ********");
+        Stack stack = new Stack(100);
+        System.out.println(stack.getSize());
+        System.out.println(stack.getCapcity());
+        System.out.println(stack.isEmpty());
+        for (int i = 1; i<=50 ;i++)
+        {
+        stack.push(i);
+        System.out.println(stack.peek());
+        }
+            
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        System.out.println(stack.peek());
+        System.out.println(stack.getSize());
+        System.out.println(stack.getCapcity());
+        System.out.println(stack.isEmpty());
+        
+        /*****  Testing Stack ******/
+        System.out.println("*************** Queue testing ********");
+        
+        Queue que = new Queue(100);
+        for (int i = 1; i<=50 ;i++)
+        {
+        que.enqueue(i);
+        System.out.println(que.peek());
+        }
+        
+        que.dequeue();
+        que.dequeue();
+        que.dequeue();
+        
+        System.out.println(que.peek());
+        
+        
+        
     }
     
 }
