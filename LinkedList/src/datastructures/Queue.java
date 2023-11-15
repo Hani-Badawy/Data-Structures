@@ -8,22 +8,22 @@ package datastructures;
  *
  * @author hmohamme
  */
-public class Queue {
-    private int[] data;
+public class Queue<E>{
+    private E[] data;
     private int size;
     private int front;
     private int end;
     private int capacity;
     public Queue(int capacity) {
         this.capacity = capacity;
-        data = new int[capacity];
+        data = (E[])new Object[capacity];
         size = 0;
         front = end = -1;
     }
     
     public Queue() {
         this.capacity = 10000;
-        data = new int[capacity];
+        data = (E[])new Object[capacity];
         front = end = -1;
         size = 0;
     }
@@ -36,8 +36,10 @@ public class Queue {
         return capacity;
     }
     
-    public void enqueue(int element)
+    public void enqueue(E element) throws Exception
     {
+        if(size == capacity)
+            throw new Exception("Cannot enqueue beyond the capacity.");
         if (front == -1)
             front++;
         
@@ -51,7 +53,7 @@ public class Queue {
         return size == 0;
     }
     
-    public int peek() throws Exception
+    public E peek() throws Exception
     {
         if(this.size == 0)
             throw new Exception("Cannot peek from an empty queue");
@@ -60,7 +62,7 @@ public class Queue {
     
     private void reset()
     {
-        int temp = data[front];
+        E temp = data[front];
         front = end = 0;
         data[front] = temp;
     }

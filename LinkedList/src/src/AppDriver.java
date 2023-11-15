@@ -23,16 +23,17 @@ public class AppDriver {
 
     /**
      * @param args the command line arguments  
+     * @throws java.lang.Exception  
      */
     public static void main(String[] args) throws Exception {
         LinkedList<Integer> list = new LinkedList();
         Node<Integer> node =new Node<>(0);
         list.add(node);
-        list.add(new Node<Integer>(1));
-        list.add(new Node<Integer>(2));
-        list.add(new Node<Integer>(3));
-        list.add(new Node<Integer>(4));
-        list.add(new Node<Integer>(5));
+        list.add(new Node<>(1));
+        list.add(new Node<>(2));
+        list.add(new Node<>(3));
+        list.add(new Node<>(4));
+        list.add(new Node<>(5));
         System.out.println("********** Printing the list after adding*********");
         System.out.println(list);
         list.insert(2, new Node(100));
@@ -56,9 +57,9 @@ public class AppDriver {
         System.out.println(dList);
         
         LinkedList<Car> carList = new LinkedList<>();
-        carList.add(new Node<Car>(new Car(2020, 230, "Bmw")));
-        carList.add(new Node<Car>(new Car(2020, 230, "Honda")));
-        carList.add(new Node<Car>(new Car(2020, 230, "Kia")));
+        carList.add(new Node<>(new Car(2020, 230, "Bmw")));
+        carList.add(new Node<>(new Car(2020, 230, "Honda")));
+        carList.add(new Node<>(new Car(2020, 230, "Kia")));
         System.out.println("********** Printing the Car list********");
         System.out.println(carList);
         
@@ -112,9 +113,6 @@ public class AppDriver {
             System.out.println(que.getSize());
         }
         que.dequeue();
-        
         System.out.println(que.getSize());
-
     }
-    
 }
