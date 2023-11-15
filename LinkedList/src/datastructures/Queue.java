@@ -11,16 +11,20 @@ package datastructures;
 public class Queue {
     private int[] data;
     private int size;
+    private int front;
+    private int end;
     private int capacity;
     public Queue(int capacity) {
         this.capacity = capacity;
         data = new int[capacity];
         size = 0;
+        front = end = -1;
     }
     
     public Queue() {
         this.capacity = 10000;
         data = new int[capacity];
+        front = end = -1;
         size = 0;
     }
 
@@ -34,7 +38,12 @@ public class Queue {
     
     public void enqueue(int element)
     {
-        data[size++] = element; 
+        if (front == -1)
+            front++;
+        
+        end++;
+        data[end] = element;
+        size++;
     }
    
     public boolean isEmpty()
@@ -42,16 +51,28 @@ public class Queue {
         return size == 0;
     }
     
-    public int peek()
+    public int peek() throws Exception
     {
-        return data[0];
+        if(this.size == 0)
+            throw new Exception("Cannot peek from an empty queue");
+        return data[front];
     }
     
-    public void dequeue()
+    private void reset()
     {
-        for (int i = 1; i< size; i++)
-            data[i-1] = data[i];
+        int temp = data[front];
+        front = end = 0;
+        data[front] = temp;
+    }
+    public void dequeue() throws Exception
+    {
+        if (size == 0)
+            throw new Exception("Cannot dequeue from an empty queue");
+        front++;
+        if(front == end) // happens when only one item in the queue, we have to reset.
+            reset();
         
         size--;
     }
+
 }

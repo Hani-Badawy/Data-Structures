@@ -24,7 +24,7 @@ public class AppDriver {
     /**
      * @param args the command line arguments  
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         LinkedList<Integer> list = new LinkedList();
         Node<Integer> node =new Node<>(0);
         list.add(node);
@@ -104,14 +104,17 @@ public class AppDriver {
         System.out.println(que.peek());
         }
         
+        for (int i = 1; i<50; i++)
+        {
+            que.dequeue();
+            System.out.print(que.peek());
+            System.out.print("\t");
+            System.out.println(que.getSize());
+        }
         que.dequeue();
-        que.dequeue();
-        que.dequeue();
         
-        System.out.println(que.peek());
-        
-        
-        
+        System.out.println(que.getSize());
+
     }
     
 }
