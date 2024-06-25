@@ -10,16 +10,18 @@ package array;
  * @param <Type>
  */
 public class Array<Type> {
-    private Type[] data; 
+    private final Type[] data; 
     private int size;
     private int capacity;
 
+    @SuppressWarnings("unchecked") // We don't have to check the cast, as we know for sure it is of type Type.
     public Array(int capacity) {
         this.capacity = capacity;
         this.size = 0;
         this.data = (Type[])new Object[capacity];
     }
     
+    @SuppressWarnings("unchecked")
     public Array(Type[] data, int capacity) {
         this.capacity = capacity;
         this.size = data.length;
@@ -27,6 +29,7 @@ public class Array<Type> {
         setData(data);
     }
 
+    @SuppressWarnings("unchecked")
     public Array(Type[] data) {
         this.capacity = 1000;
         this.size = data.length;
