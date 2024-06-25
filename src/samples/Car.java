@@ -8,7 +8,7 @@ package samples;
  *
  * @author Hani Mohammed
  */
-public class Car implements Comparable<Car>{
+public class Car implements Comparable<Car> {
     private String vin; 
     private String model;
     private int year;
