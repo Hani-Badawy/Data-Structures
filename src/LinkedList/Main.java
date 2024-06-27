@@ -4,6 +4,8 @@
  */
 package LinkedList;
 
+import java.util.Iterator;
+
 /**
  *
  * @author hmohamme
@@ -16,6 +18,16 @@ public class Main {
         {
             myLinkedList.add(new Node(i));
         }
-        System.out.println("Stop here");
+        myLinkedList.insert(5, new Node(20));
+        myLinkedList.pop();
+        myLinkedList.remove(7);
+        
+        System.out.println("Iterating over the list");
+        for(Node node : myLinkedList)
+            System.out.println(node);
+        
+        Iterator iter = new LinkedListIterator(myLinkedList);
+        while(iter.hasNext())
+            System.out.println(iter.next());
     }
 }

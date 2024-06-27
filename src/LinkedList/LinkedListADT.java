@@ -34,5 +34,12 @@ public interface LinkedListADT {
      * @return True if the linkedlist is empty or False otherwise
      */
     public boolean isEmpty();
+    /**
+     * gets the node at the specified location
+     * @param location where we get the node at
+     * @return the node at that location
+     * @throws InvalidLocationException
+     */
+    public Node nodeAt(int location);
     
 }
